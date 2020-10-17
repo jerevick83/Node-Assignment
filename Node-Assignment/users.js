@@ -47,6 +47,31 @@ const Users = (req, res)=>{
         
     })
     }
+    res.setHeader('Content-type', 'type/html')
+    res.write(
+        `<html>
+        <head>
+        <title>Node-Udemy</title>
+        </head>
+        <body>
+        <h3>Welcome to the users' page</h3>
+        <ul>
+            <li>Mohamed Fofanah</li>
+            <li>Foday Sesay</li>
+            <li>John Snow</li>
+            <li>Peter Dinklage</li>
+            <li>Jeremiah Victor Harding </li>
+        </ul>
+        <form action='/create-user' method='POST'>
+            <label for='username'>Username</label>
+            <input type='text' id='username' name='username'>
+            <input type='submit'>
+        
+        </form>
+        </body>
+        </html>`)
+        
+    return res.end()
 }
 
 module.exports = Users;
